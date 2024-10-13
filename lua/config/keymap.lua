@@ -9,4 +9,10 @@ vim.keymap.set('n', 'L', '$')
 vim.keymap.set('n', 'J', '}')
 vim.keymap.set('n', 'K', '{')
 
+vim.keymap.set('v', 'H', '^')
+vim.keymap.set('v', 'L', '$')
+vim.keymap.set('v', 'J', '}')
+vim.keymap.set('v', 'K', '{')
+
+
 vim.keymap.set('i', 'jk', '<Esc>')
