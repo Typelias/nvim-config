@@ -13,6 +13,8 @@ return {
           "lua_ls",
           "gopls",
           "ts_ls",
+          "kotlin_language_server",
+          "jdtls"
         },
       })
     end,
@@ -29,6 +31,12 @@ return {
         capabilities = capabilities
       })
       lspconfig.ts_ls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.kotlin_language_server.setup({
+        capabilities = capabilities
+      })
+      lspconfig.jdtls.setup({
         capabilities = capabilities
       })
       vim.keymap.set("n", "<leader>qi", vim.lsp.buf.hover, {})
