@@ -7,7 +7,15 @@ local openChat = function()
       width = 0.3,
       height = 0.8
 		},
+    context = "buffers"
 	})
+end
+
+local openChatWithContext = function()
+  local input = vim.fn.input("Quick chat: ")
+  if input ~= "" then
+    require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+  end
 end
 
 return {
@@ -28,6 +36,7 @@ return {
 			local chat = require("CopilotChat")
 			chat.setup({})
 			vim.keymap.set("n", "<C-C>", openChat, {})
+			vim.keymap.set("n", "<leader>cc", openChatWithContext, {})
 		end,
 	},
 }
