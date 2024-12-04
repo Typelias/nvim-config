@@ -4,15 +4,10 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Better movment
-vim.keymap.set('n', 'H', '^')
-vim.keymap.set('n', 'L', '$')
-vim.keymap.set('n', 'J', '}')
-vim.keymap.set('n', 'K', '{')
-
-vim.keymap.set('v', 'H', '^')
-vim.keymap.set('v', 'L', '$')
-vim.keymap.set('v', 'J', '}')
-vim.keymap.set('v', 'K', '{')
+vim.keymap.set({ 'n', 'v', 'i', 'c', 'o', 's' }, 'H', '^')
+vim.keymap.set({ 'n', 'v', 'i', 'c', 'o', 's' }, 'L', '$')
+vim.keymap.set({ 'n', 'v', 'i', 'c', 'o', 's' }, 'J', '}')
+vim.keymap.set({ 'n', 'v', 'i', 'c', 'o', 's' }, 'K', '{')
 
 vim.keymap.set('o', 'H', '^')
 vim.keymap.set('o', 'L', '$')
