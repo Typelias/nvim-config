@@ -1,9 +1,12 @@
 return {
   {
     "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end,
+    opts = {
+      registries = {
+					'github:nvim-java/mason-registry',
+					'github:mason-org/mason-registry',
+				},
+    }
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -12,9 +15,7 @@ return {
         ensure_installed = {
           "lua_ls",
           "gopls",
-          "ts_ls",
-          "kotlin_language_server",
-          "jdtls"
+          "ts_ls"
         },
       })
     end,
@@ -33,12 +34,8 @@ return {
       lspconfig.ts_ls.setup({
         capabilities = capabilities
       })
-      lspconfig.kotlin_language_server.setup({
-        capabilities = capabilities
-      })
-      lspconfig.jdtls.setup({
-        capabilities = capabilities
-      })
+
+       require('lspconfig').jdtls.setup({})
       vim.keymap.set("n", "<leader>qi", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
